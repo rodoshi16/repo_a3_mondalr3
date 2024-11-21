@@ -1,20 +1,20 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: Rodoshi Mondal Utorid: mondalr3 email: rodoshi.mondal@mail.utoronto.ca
 
 Nov 16, 2024
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Not released
+	Today     : Not released
+	Obstacles : Not released
 
 Nov 17, 2024
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Not released
+	Today     : Not released
+	Obstacles : Not released
 
 Nov 18, 2024
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : N/A
+	Today     : N/A
+	Obstacles : N/A
 
 Nov 19, 2024
 	Yesterday :

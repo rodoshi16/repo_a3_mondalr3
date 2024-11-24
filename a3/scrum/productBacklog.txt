@@ -2,7 +2,7 @@
 # If a USER STORY is large, break it into smaller user stories.
 
 --------------------------------------------------------------------------
-TYPE     : BUG 3.0 : mondalr3 : STATUS : Complete
+TYPE     : BUG 3.0 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
 PRIORITY : (1,2,3)
@@ -11,11 +11,11 @@ ISSUE    :
 - demonstrates that they can run Paint on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 3.1 : mondalr3 : STATUS : InProgress
+TYPE     : USER STORY 3.1 : mondalr3 : STATUS : Complete
 NAME     : Polyline
 OWNER    :
 PRIORITY : 1
-ESTIMATE : 1 day    ACTUAL :
+ESTIMATE :  4 hours   ACTUAL :  13 hours
 AS A     : user
 ISSUE    : A button which allows me to draw a polyline. Once selected,
 a left click on the canvas places the first polyline point.
@@ -29,7 +29,7 @@ See squiggle for example. There is no mouse drag for polyline.
 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 3.2 : UTORID : STATUS : InProgress
+TYPE     : USER STORY 3.2 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Save
 OWNER    :
 PRIORITY : 1

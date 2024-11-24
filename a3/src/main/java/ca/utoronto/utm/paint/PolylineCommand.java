@@ -1,39 +1,35 @@
 package ca.utoronto.utm.paint;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 
-public class PolylineCommand extends PaintCommand {
-    // need to store the point where the user first clicks and then connect them from the last point
+public class PolylineCommand extends PaintCommand{
+    //We need to store the set of points where the user clicks to create the line segments//
     private ArrayList<Point> points=new ArrayList<Point>();
 
-    public ArrayList<Point> getPoints(){
-        return points;
-    }
-
+    /*This public class adds the points where the user clicks on the canvas to the list of polyline points. It
+    * then displays the change in the state and notifies observers of the change.*/
     public void add(Point p){
-        //method to add points and change the set and notify observers
         this.points.add(p);
         this.setChanged();
         this.notifyObservers();
     }
+    /* This public class returns the array of polyline points*/
+    public ArrayList<Point> getPoints(){ return this.points; }
+
 
     @Override
     public void execute(GraphicsContext g) {
-        // giving color to the polyline, gets color from PaintCommand which picks the color randomly
+        //sets the color from PaintCommand which is picked randomly
         g.setStroke(this.getColor());
-        // to execute PolyLine command, iterate through the list of points
-        for (int i = 0; i< this.points.size(); i++){
+        // iterating through the list of points
+        for(int i=0;i<this.points.size()-1;i++){
             Point p1 = this.points.get(i);
             Point p2 = this.points.get(i+1);
-            //strokeLine method calculates the line segment automatically given the two points
+            // the strokeLine method from the GraphicsContext g class automatically does the calculations for the line segment
             g.strokeLine(p1.x, p1.y, p2.x, p2.y);
-
         }
-
 
     }
 }

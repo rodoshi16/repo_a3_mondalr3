@@ -60,5 +60,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	public void setShapeManipulatorStrategy(ShapeManipulatorStrategy strategy) {
 		this.strategy = strategy;
 	}
+
 }
 

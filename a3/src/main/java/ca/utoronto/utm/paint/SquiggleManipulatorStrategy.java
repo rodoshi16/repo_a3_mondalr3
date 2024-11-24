@@ -6,6 +6,7 @@ class SquiggleManipulatorStrategy extends ShapeManipulatorStrategy {
 		super(paintModel);
 	}
 
+	// overrides the mouseDragged and mousePressed methods from the squiggle class
 	private SquiggleCommand squiggleCommand;
 	@Override
 	public void mouseDragged(MouseEvent e) {

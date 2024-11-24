@@ -37,6 +37,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.model.deleteObserver(this);
 		}
 		this.model = model;
+		//setting the specific strategy here
 		this.setShapeManipulatorStrategy(new ShapeManipulatorStrategy(this.model)); // set to the empty strategy
 		this.model.addObserver(this);
 		this.repaint();

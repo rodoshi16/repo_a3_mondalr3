@@ -18,26 +18,28 @@ Nov 18, 2024
 
 Nov 19, 2024
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Created a small Ollama model outside this project source that responds to hi, bye and
+	ollama when prompted by the user to understand the AI feature for this assignment
+	Obstacles : Finding ways of actually make the AI model respond to responses other than hi and bye
 
 Nov 20, 2024
-	Yesterday :
-	Today     :
+	Yesterday : Created a small Ollama model outside this project source that responds to hi, bye and
+                	ollama when prompted by the user to understand the AI feature for this assignment
+	Today     : Looked through the UML diagrams to understand the existing code base
 	Obstacles :
 
 Nov 21, 2024
-	Yesterday :
+	Yesterday : Looked through the UML diagrams to understand the existing code base
 	Today     :
 	Obstacles :
 
 Nov 22, 2024
 	Yesterday :
-	Today     :
-	Obstacles :
-	
+	Today     : Created and implemented PolyLineCommand class and PolyLineStrategyManipulator class to implement USER STORY 3.1.
+	Obstacles : The program keeps crashing everytime the mouse moves out of the button Polygon.
+
 Nov 23, 2024
-	Yesterday :
+	Yesterday : Created and implemented PolyLineCommand class and PolyLineStrategyManipulator class to implement USER STORY 3.1.
 	Today     :
 	Obstacles :
 
@@ -55,17 +57,17 @@ Nov 26, 2024
 	Yesterday :
 	Today     :
 	Obstacles :
-	
+
 Nov 27, 2024
 	Yesterday :
 	Today     :
 	Obstacles :
-	
+
 Nov 28, 2024
 	Yesterday :
 	Today     :
 	Obstacles :
-	
+
 Nov 29, 2024
 	Yesterday :
 	Today     :
@@ -80,7 +82,7 @@ Dec 1, 2024
 	Yesterday :
 	Today     :
 	Obstacles :
-	
+
 Dec 2, 2024
 	Yesterday :
 	Today     :
@@ -95,7 +97,7 @@ Dec 4, 2024
 	Yesterday :
 	Today     :
 	Obstacles :
-	
+
 Dec 5, 2024
 	Yesterday :
 	Today     :

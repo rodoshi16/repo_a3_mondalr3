@@ -4,3 +4,21 @@
 
 # Sprint 1 November 19, 2019
 # Sprint 1 Backlog UserStories go below
+--------------------------------------------------------------------------
+TYPE     : USER STORY 3.1 : mondalr3 : STATUS : Complete
+NAME     : Polyline
+OWNER    :
+PRIORITY : 1
+ESTIMATE :  4 hours   ACTUAL :  13 hours
+AS A     : user
+ISSUE    : A button which allows me to draw a polyline. Once selected,
+a left click on the canvas places the first polyline point.
+Each subsequent left click on the canvas
+adds a line segment to the polyline. A final right click ends the polyline.
+The next left click starts another polyline.  As the mouse moves over
+the canvas, the current potential next line segment is on display.
+
+IMPL DTL : Implementation details for polyline
+See squiggle for example. There is no mouse drag for polyline.
+
+--------------------------------------------------------------------------

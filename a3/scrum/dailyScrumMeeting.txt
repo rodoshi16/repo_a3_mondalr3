@@ -44,13 +44,13 @@ Nov 23, 2024
 	Obstacles : NullPointerexception occurs when the mouse moves from the button Polyline to the canvas
 
 Nov 24, 2024
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Tried to debug why the polyline is not being displayed on the canvas and why its throwing all the errors
+	Today     : Successfully implemented Polyline feature US3.1
+	Obstacles : Polyline was not being displayed and program was crashing everytime a new line was created
 
 Nov 25, 2024
 	Yesterday :
-	Today     :
+	Today     : Successfully implemented Polyline feature US3.1
 	Obstacles :
 
 Nov 26, 2024

@@ -36,12 +36,12 @@ Nov 21, 2024
 Nov 22, 2024
 	Yesterday :
 	Today     : Created and implemented PolyLineCommand class and PolyLineStrategyManipulator class to implement USER STORY 3.1.
-	Obstacles : The program keeps crashing everytime the mouse moves out of the button Polygon.
+	Obstacles : The program keeps crashing everytime the mouse moves out of the button Polyline.
 
 Nov 23, 2024
 	Yesterday : Created and implemented PolyLineCommand class and PolyLineStrategyManipulator class to implement USER STORY 3.1.
-	Today     :
-	Obstacles :
+	Today     : Tried to debug why the polyline is not being displayed on the canvas and why its throwing all the errors
+	Obstacles : NullPointerexception occurs when the mouse moves from the button Polyline to the canvas
 
 Nov 24, 2024
 	Yesterday :

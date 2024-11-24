@@ -20,4 +20,5 @@ public class Paint extends Application {
 		// View + Controller
 		this.view = new View(model, stage);
 	}
+
 }

@@ -30,8 +30,33 @@ public class PaintFileParser {
 
 	private Pattern pCircleStart=Pattern.compile("^Circle$");
 	private Pattern pCircleEnd=Pattern.compile("^EndCircle$");
-	// ADD MORE!!
-	
+
+	private Pattern pCircleColor= Pattern.compile("");
+	private Pattern pCircleFilled = Pattern.compile("");
+	private Pattern pCircleCenter= Pattern.compile("");
+	private Pattern pCircleRadius = Pattern.compile("");
+
+	private Pattern pRectangleStart=Pattern.compile("^Rectangle$");
+	private Pattern pRectangleEnd=Pattern.compile("^EndRectangle$");
+
+	private Pattern pRectangleColor=Pattern.compile("");
+	private Pattern pRectangleFilled=Pattern.compile("");
+	private Pattern pRectanglePoint1=Pattern.compile("");
+	private Pattern pRectanglePoint2=Pattern.compile("");
+
+	private Pattern pSquiggleStart=Pattern.compile("^Squiggle$");
+	private Pattern pSquiggleEnd=Pattern.compile("^EndSquiggle$");
+
+	private Pattern pSquiggleColor=Pattern.compile("");
+	private Pattern pSquiggleFilled=Pattern.compile("");
+	private Pattern pSquigglePoint=Pattern.compile("");
+	private Pattern pSquigglePoint1=Pattern.compile("");
+	private Pattern pSquigglePoint2=Pattern.compile("");
+
+
+	private Pattern pPolylineStart=Pattern.compile("^Polyline$");
+	private Pattern pPolylineEnd=Pattern.compile("^EndPolyline$");
+
 	/**
 	 * Store an appropriate error message in this, including 
 	 * lineNumber where the error occurred.
@@ -120,15 +145,19 @@ public class PaintFileParser {
 					case 1: // Looking for the start of a new object or end of the save file
 						m=pCircleStart.matcher(l);
 						if(m.matches()){
-							// ADD CODE!!!
 							state=2; 
 							break;
 						}
-						// ADD CODE
+						error("Expected Start of Shape or End Paint Save File");
 				
 					case 2:
-						// ADD CODE
-						break;
+						m=pCircleStart.matcher(l);
+						if(m.matches()){
+							state=3;
+							break;
+						}
+						error("Expected Start of Shape or End Paint Save File");
+
 					case 3:
 						break;
 					// ...

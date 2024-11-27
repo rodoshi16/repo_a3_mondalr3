@@ -55,6 +55,11 @@ public class PaintFileParser {
 
 
 	private Pattern pPolylineStart=Pattern.compile("^Polyline$");
+	private Pattern pPolylineColor=Pattern.compile("");
+	private Pattern pPolylineFilled=Pattern.compile("");
+	private Pattern pPolylinePoint=Pattern.compile("");
+	private Pattern pPolylinePoint1=Pattern.compile("");
+	private Pattern pPolylinePoint2=Pattern.compile("");
 	private Pattern pPolylineEnd=Pattern.compile("^EndPolyline$");
 
 	/**
@@ -150,16 +155,208 @@ public class PaintFileParser {
 						}
 						error("Expected Start of Shape or End Paint Save File");
 				
-					case 2:
-						m=pCircleStart.matcher(l);
+					case 2: {
+						m= pCircleColor.matcher(l);
 						if(m.matches()){
 							state=3;
+						}
+						error("Expected Expected Circle color.");
+						break;
+					}
+					case 3:{
+						m= pCircleFilled.matcher(l);
+						if(m.matches()){
+							state= 4;
+						}
+						error("Expected Circle Filled.");
+						break;
+					}
+					case 4:{
+						m= pCircleCenter.matcher(l);
+						if(m.matches()){
+							state= 5;
+						}
+						error("Expected Circle Center.");
+						break;
+
+					}
+					case 5:{
+						m= pCircleRadius.matcher(l);
+						if(m.matches()){
+							state= 6;
+						}
+						error("Expected Circle Radius.");
+					}
+					case 6:{
+						m= pCircleEnd.matcher(l);
+						if(m.matches()){
+							state= 7;
+						}
+						error("Expected End Circle.");
+
+					}
+					case 7: // Looking for the start of a new object or end of the save file
+						m=pRectangleStart.matcher(l);
+						if(m.matches()){
+							state=8;
 							break;
 						}
 						error("Expected Start of Shape or End Paint Save File");
 
-					case 3:
+					case 8: {
+						m= pRectangleColor.matcher(l);
+						if(m.matches()){
+							state=9;
+						}
+						error("Expected Rectangle color.");
 						break;
+					}
+					case 9:{
+						m= pRectangleFilled.matcher(l);
+						if(m.matches()){
+							state= 10;
+						}
+						error("Expected Rectangle Filled.");
+						break;
+					}
+					case 10:{
+						m= pRectanglePoint1.matcher(l);
+						if(m.matches()){
+							state= 11;
+						}
+						error("Expected Rectangle p1.");
+						break;
+
+					}
+					case 11:{
+						m= pRectanglePoint2.matcher(l);
+						if(m.matches()){
+							state= 12;
+						}
+						error("Expected Rectangle p2.");
+					}
+					case 12:{
+						m= pRectangleEnd.matcher(l);
+						if(m.matches()){
+							state= 13;
+						}
+						error("Expected End Rectangle.");
+
+					}
+					case 13: // Looking for the start of a new object or end of the save file
+						m=pSquiggleStart.matcher(l);
+						if(m.matches()){
+							state=14;
+							break;
+						}
+						error("Expected Start of Shape or End Paint Save File");
+
+					case 14: {
+						m= pSquiggleColor.matcher(l);
+						if(m.matches()){
+							state=15;
+						}
+						error("Expected Squiggle color.");
+						break;
+					}
+					case 15:{
+						m= pSquiggleFilled.matcher(l);
+						if(m.matches()){
+							state= 16;
+						}
+						error("Expected Squiggle Filled.");
+						break;
+					}
+					case 16:{
+						m= pSquigglePoint.matcher(l);
+						if(m.matches()){
+							state= 17;
+						}
+						error("Expected Squiggle points.");
+						break;
+
+					}
+					case 17:{
+						m= pSquigglePoint1.matcher(l);
+						if(m.matches()){
+							state= 18;
+						}
+						error("Expected Squiggle p1.");
+					}
+					case 18:{
+						m= pSquigglePoint2.matcher(l);
+						if(m.matches()){
+							state= 19;
+						}
+						error("Expected Squiggle p2.");
+
+					}
+					case 19:{
+						m= pSquigglePoint2.matcher(l);
+						if(m.matches()){
+							state= 20;
+						}
+						error("Expected Squiggle endpoints.");
+
+					}
+					case 20: // Looking for the start of a new object or end of the save file
+						m=pPolylineStart.matcher(l);
+						if(m.matches()){
+							state=21;
+							break;
+						}
+						error("Expected Start of Shape or End Paint Save File");
+
+					case 21: {
+						m= pPolylineColor.matcher(l);
+						if(m.matches()){
+							state=22;
+						}
+						error("Expected Polyline color.");
+						break;
+					}
+					case 22:{
+						m= pPolylineFilled.matcher(l);
+						if(m.matches()){
+							state= 23;
+						}
+						error("Expected Polyline Filled.");
+						break;
+					}
+					case 23:{
+						m= pPolylinePoint.matcher(l);
+						if(m.matches()){
+							state= 24;
+						}
+						error("Expected Polyline points.");
+						break;
+
+					}
+					case 24:{
+						m= pPolylinePoint1.matcher(l);
+						if(m.matches()){
+							state= 26;
+						}
+						error("Expected Polyline p1.");
+					}
+					case 25:{
+						m= pPolylinePoint2.matcher(l);
+						if(m.matches()){
+							state= 27;
+						}
+						error("Expected Polyline p2.");
+
+					}
+					case 26:{
+						m= pPolylineEnd.matcher(l);
+						if(m.matches()){
+							state= 28;
+						}
+						error("Expected Polyline endpoints.");
+
+					}
+
+
 					// ...
 					/**
 					 * I have around 20+/-5 cases in my FSM. If you have too many

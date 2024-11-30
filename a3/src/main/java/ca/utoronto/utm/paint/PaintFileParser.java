@@ -32,7 +32,7 @@ public class PaintFileParser {
 	private Pattern pCircleEnd=Pattern.compile("^EndCircle$");
 
 	private Pattern pCircleColor= Pattern.compile("");
-	private Pattern pCircleFilled = Pattern.compile("");
+	private Pattern pCircleFilled = Pattern.compile("^(true|false)$");
 	private Pattern pCircleCenter= Pattern.compile("");
 	private Pattern pCircleRadius = Pattern.compile("");
 

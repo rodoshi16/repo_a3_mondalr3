@@ -26,7 +26,6 @@ the canvas, the current potential next line segment is on display.
 
 IMPL DTL : Implementation details for polyline
 See squiggle for example. There is no mouse drag for polyline.
-
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 3.2 : UTORID : STATUS : InProgress

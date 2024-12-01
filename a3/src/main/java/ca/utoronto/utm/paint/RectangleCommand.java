@@ -53,4 +53,26 @@ public class RectangleCommand extends PaintCommand {
 			g.strokeRect(topLeft.x, topLeft.y, dimensions.x, dimensions.y);
 		}
 	}
+
+
+	@Override
+	public String getPaintSaveFileString() {
+		StringBuilder s = new StringBuilder();
+		s.append("Rectangle\n");
+
+		// Convert the color to RGB values
+		String color = getColor().toString().replace("0x", ""); // Removes "0x"
+		String r = String.valueOf(Integer.parseInt(color.substring(0, 2), 16)); // Red
+		String g = String.valueOf(Integer.parseInt(color.substring(2, 4), 16)); // Green
+		String b = String.valueOf(Integer.parseInt(color.substring(4, 6), 16)); // Blue
+
+		s.append("\tcolor: ").append(r).append(",").append(g).append(",").append(b).append("\n");
+		s.append("\tfilled: ").append(isFill()).append("\n");
+		s.append("\tp1:(").append(getP1().x).append(",").append(getP1().y).append(")\n");
+		s.append("\tp2:(").append(getP2().x).append(",").append(getP2().y).append(")\n");
+		s.append("EndRectangle\n");
+		return s.toString();
+	}
+
+
 }

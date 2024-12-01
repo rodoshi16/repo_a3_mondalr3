@@ -51,7 +51,7 @@ simplest example, so this will also parse.
 
 PaintSave   File Version 1.0
 
-End Paint Sa  ve File
+End Paint Save File
 
 
 ------------------ END   EXAMPLE -----------------

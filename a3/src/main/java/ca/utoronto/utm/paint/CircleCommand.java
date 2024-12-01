@@ -33,4 +33,20 @@ public class CircleCommand extends PaintCommand {
 			g.strokeOval(x-radius, y-radius, 2*radius, 2*radius);
 		}
 	}
+
+
+	@Override
+	public String getPaintSaveFileString() {
+		StringBuilder s = new StringBuilder();
+		s.append("Circle\n");
+		s.append("\tcolor: ").append((int) (getColor().getRed() * 255)).append(",").append((int) (getColor().getGreen() * 255)).append(",").append((int) (getColor().getBlue() * 255)).append("\t").append('\n');
+		s.append("\tfilled: ").append(isFill()).append("\t").append('\n');
+		s.append("\tcenter:(").append(getCentre().x).append(",").append(getCentre().y).append(")\n");
+		s.append("\tradius: ").append(getRadius()).append("\n");
+		s.append("EndCircle\n");
+
+		return s.toString();
+	}
+
+
 }

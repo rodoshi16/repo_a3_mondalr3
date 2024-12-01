@@ -9,6 +9,7 @@ public class FileIO {
      * @return
      */
     public static boolean writeHomeFile(String contents, String fileName){
+        // get the property if the strings and seperate them into files
         String fullFileName = System.getProperty("user.home") + File.separator + fileName;
         return writeFile(contents, fullFileName);
     }
@@ -20,6 +21,7 @@ public class FileIO {
      * @return
      */
     private static boolean writeFile(String contents, String fileName){
+        // return value is true
         boolean retVal=true;
         PrintWriter out=null;
         try {

@@ -1,6 +1,7 @@
 package ca.utoronto.utm.paint;
 
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -8,10 +9,13 @@ import java.util.Observer;
 import javafx.scene.canvas.GraphicsContext;
 
 public class PaintModel extends Observable implements Observer {
+	/* Public method which returns the List of Commands in the PaintModel*/
+	public ArrayList<PaintCommand> getCommands(){
+		return this.commands;
 
-	public void save(PrintWriter writer) {
-		
 	}
+
+
 	public void reset(){
 		for(PaintCommand c: this.commands){
 			c.deleteObserver(this);

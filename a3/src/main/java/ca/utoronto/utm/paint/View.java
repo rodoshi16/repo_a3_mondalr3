@@ -177,14 +177,14 @@ public class View implements EventHandler<ActionEvent> {
 	 * @param paintModel
 	 */
 	public static void save(PrintWriter writer, PaintModel paintModel) {
-		writer.println("PaintSaveFileVersion1.0");
+		writer.println("Paint Save File Version 1.0");
 		for (PaintCommand command: paintModel.getCommands()){
 			String command_s = command.getPaintSaveFileString();
 			writer.write(command_s);
-			writer.write("\n");
+			//writer.write("\n");
 
 		}
-		writer.println("EndPaintSaveFile");
+		writer.println("End Paint Save File");
 		writer.close();
 
 	}

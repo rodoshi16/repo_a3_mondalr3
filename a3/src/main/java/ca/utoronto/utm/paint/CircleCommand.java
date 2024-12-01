@@ -38,19 +38,12 @@ public class CircleCommand extends PaintCommand {
 	@Override
 	public String getPaintSaveFileString() {
 		StringBuilder s = new StringBuilder();
-		s.append("Circle: ");
-
-		// Convert the color to RGB values (using Color's getRed(), getGreen(), getBlue())
-		String color = getColor().toString().replace("0x", ""); // Removes "0x"
-		String r = String.valueOf(Integer.parseInt(color.substring(0, 2), 16)); // Red
-		String g = String.valueOf(Integer.parseInt(color.substring(2, 4), 16)); // Green
-		String b = String.valueOf(Integer.parseInt(color.substring(4, 6), 16)); // Blue
-
-		s.append("\tColor: " + r + "," + g + "," + b);
-		s.append("\tFilled: " + isFill());
-		s.append("\tCenter: " + getCentre());
-		s.append("\tRadius: " + getRadius());
-		s.append("EndCircle");
+		s.append("Circle\n");
+		s.append("\tcolor: ").append((int) (getColor().getRed() * 255)).append(",").append((int) (getColor().getGreen() * 255)).append(",").append((int) (getColor().getBlue() * 255)).append("\t").append('\n');
+		s.append("\tfilled: ").append(isFill()).append("\t").append('\n');
+		s.append("\tcenter:(").append(getCentre().x).append(",").append(getCentre().y).append(")\n");
+		s.append("\tradius: ").append(getRadius()).append("\n");
+		s.append("EndCircle\n");
 
 		return s.toString();
 	}

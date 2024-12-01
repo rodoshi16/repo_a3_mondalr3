@@ -66,10 +66,10 @@ public class RectangleCommand extends PaintCommand {
 		String g = String.valueOf(Integer.parseInt(color.substring(2, 4), 16)); // Green
 		String b = String.valueOf(Integer.parseInt(color.substring(4, 6), 16)); // Blue
 
-		s.append("\tColor: ").append(r).append(",").append(g).append(",").append(b).append("\n");
-		s.append("\tFilled: ").append(isFill()).append("\n");
-		s.append("\tP1:(").append(getP1().x).append(",").append(getP1().y).append(")\n");
-		s.append("\tP2:(").append(getP2().x).append(",").append(getP2().y).append(")\n");
+		s.append("\tcolor: ").append(r).append(",").append(g).append(",").append(b).append("\n");
+		s.append("\tfilled: ").append(isFill()).append("\n");
+		s.append("\tp1:(").append(getP1().x).append(",").append(getP1().y).append(")\n");
+		s.append("\tp2:(").append(getP2().x).append(",").append(getP2().y).append(")\n");
 		s.append("EndRectangle\n");
 		return s.toString();
 	}

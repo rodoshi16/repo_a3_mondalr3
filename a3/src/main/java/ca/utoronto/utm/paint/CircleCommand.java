@@ -34,18 +34,26 @@ public class CircleCommand extends PaintCommand {
 		}
 	}
 
+
 	@Override
-	public String getPaintSaveFileString(){
+	public String getPaintSaveFileString() {
 		StringBuilder s = new StringBuilder();
 		s.append("Circle: ");
-		s.append("\tColor:" + getColor());
+
+		// Convert the color to RGB values (using Color's getRed(), getGreen(), getBlue())
+		String color = getColor().toString().replace("0x", ""); // Removes "0x"
+		String r = String.valueOf(Integer.parseInt(color.substring(0, 2), 16)); // Red
+		String g = String.valueOf(Integer.parseInt(color.substring(2, 4), 16)); // Green
+		String b = String.valueOf(Integer.parseInt(color.substring(4, 6), 16)); // Blue
+
+		s.append("\tColor: " + r + "," + g + "," + b);
 		s.append("\tFilled: " + isFill());
 		s.append("\tCenter: " + getCentre());
 		s.append("\tRadius: " + getRadius());
 		s.append("EndCircle");
 
 		return s.toString();
-
 	}
+
 
 }

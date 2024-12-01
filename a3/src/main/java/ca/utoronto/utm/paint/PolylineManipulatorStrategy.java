@@ -10,43 +10,45 @@ public class PolylineManipulatorStrategy extends ShapeManipulatorStrategy {
     private Point curr;
     PolylineManipulatorStrategy(PaintModel model){
         super(model);
-        this.polylineCommand = new PolylineCommand();
+        this.polylineCommand = null;
         this.curr = null;
     }
 
     @Override
-    public void mouseClicked(MouseEvent e){
-        // we need to check if a new polyline is being started
-        if (this.polylineCommand == null){
-            // polylinecommand is only null when right click occurs
-            // then a new polylinrcommand is initialized and added as a command
-            this.polylineCommand = new PolylineCommand();
-            this.addCommand(this.polylineCommand);
-        }
+    public void mouseClicked(MouseEvent e) {
         // the point the user has clicked
-        Point q = new Point((int)e.getX(),(int) e.getY());
+        Point q = new Point((int) e.getX(), (int) e.getY());
+
         // getButton method tells us which mouse button was clicked
         // if its left, we add the point to the command
-        if (e.getButton() == MouseButton.PRIMARY){
-            this.polylineCommand.add(q);
-            System.out.println("left click");
-
+        if (e.getButton() == MouseButton.PRIMARY) {
+            // we need to check if a new polyline is being started
+            if (this.polylineCommand == null) {
+                this.polylineCommand = new PolylineCommand();
+                this.addCommand(this.polylineCommand);
             }
-        // if its right, the end the line by setting it to null
-        else if(e.getButton() == MouseButton.SECONDARY){
-                this.polylineCommand = null;
-                //this.curr = null;
-            System.out.println("right click");
-        }
 
+        this.polylineCommand.add(q);
+        System.out.println("left click");
+
+        }
+        // if its right, the end the line by setting it to null
+        else if (e.getButton() == MouseButton.SECONDARY) {
+            // we need to check if a new polyline is being started
+            if (this.polylineCommand != null) {
+                this.polylineCommand = null;
+                System.out.println("right click");
+            }
+
+        }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // if right click has not been pressed yet, we the polylinecommand to the paint model
-        if(this.polylineCommand != null){
-            this.addCommand(polylineCommand);
-        }
+        // if right click has not been pressed yet, we add the polylineCommand to the paint model
+//        if(this.polylineCommand != null){
+//            this.addCommand(polylineCommand);
+//        }
     }
 
     // polyline has no drag feature

@@ -34,19 +34,27 @@ public class PolylineCommand extends PaintCommand{
     }
 
     @Override
-    public String getPaintSaveFileString(){
+    public String getPaintSaveFileString() {
         StringBuilder s = new StringBuilder();
-        s.append("Polyline: ");
-        s.append("\tcolor:" + getColor());
-        s.append("\tfilled: " + isFill());
-        s.append("\tpoints: ");
-        s.append("\t\tp1: ");
-        s.append("\t\tp2: ");
-        s.append("EndPolyline: ");
+        s.append("Polyline\n");
+
+        String c = getColor().toString().replace("0x", "");
+        String r = String.valueOf(Integer.parseInt(c.substring(0, 2), 16));
+        String g = String.valueOf(Integer.parseInt(c.substring(2, 4), 16));
+        String b = String.valueOf(Integer.parseInt(c.substring(4, 6), 16));
+
+        s.append("\tcolor: ").append(r).append(",").append(g).append(",").append(b).append("\n");
+        s.append("\tfilled: ").append(isFill()).append("\n");
+        s.append("\tpoints\n");
+        for (Point p : getPoints()) {
+            s.append("\t\tpoint:(").append(p.x).append(",").append(p.y).append(")\n");
+        }
+
+        s.append("\tend points\n");
+        s.append("End Polyline\n");
 
         return s.toString();
-
     }
-
-
 }
+
+

@@ -31,14 +31,27 @@ public class SquiggleCommand extends PaintCommand {
 	@Override
 	public String getPaintSaveFileString() {
 		StringBuilder s = new StringBuilder();
-		s.append("Squiggle: ");
-		s.append("\tcolor:" + getColor());
-		s.append("\tfilled: " + isFill());
-		s.append("\tpoints: ");
-		s.append("\t\tp1: ");
-		s.append("\t\tp2: ");
-		s.append("EndSquiggle: ");
+		s.append("Squiggle\n");
+
+		// Convert the color from hexadecimal (0xRRGGBBAA) to RGB format
+		String color = getColor().toString().replace("0x", "");
+		String r = String.valueOf(Integer.parseInt(color.substring(0, 2), 16));
+		String g = String.valueOf(Integer.parseInt(color.substring(2, 4), 16));
+		String b = String.valueOf(Integer.parseInt(color.substring(4, 6), 16));
+
+		s.append("\tcolor: ").append(r).append(",").append(g).append(",").append(b).append("\n");
+		s.append("\tfilled: ").append(isFill()).append("\n");
+		s.append("\tpoints\n");
+
+		// Iterate through points and format them for output
+		for (Point p : getPoints()) {
+			s.append("\t\tpoint:(").append(p.x).append(",").append(p.y).append(")\n");
+		}
+
+		s.append("\tend points\n");
+		s.append("EndSquiggle\n");
 
 		return s.toString();
 	}
 }
+

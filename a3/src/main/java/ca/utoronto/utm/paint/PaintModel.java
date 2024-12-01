@@ -9,17 +9,6 @@ import java.util.Observer;
 import javafx.scene.canvas.GraphicsContext;
 
 public class PaintModel extends Observable implements Observer {
-
-	public void save(PrintWriter writer) {
-		writer.println("Paint Save File Version 1.0");
-		for (PaintCommand command: this.commands){
-			String command_s = command.getPaintSaveFileString();
-			writer.write(command_s);
-			writer.write("\n");
-
-		}
-		writer.close();
-	}
 	/* Public method which returns the List of Commands in the PaintModel*/
 	public ArrayList<PaintCommand> getCommands(){
 		return this.commands;

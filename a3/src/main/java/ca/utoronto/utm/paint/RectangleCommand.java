@@ -53,4 +53,17 @@ public class RectangleCommand extends PaintCommand {
 			g.strokeRect(topLeft.x, topLeft.y, dimensions.x, dimensions.y);
 		}
 	}
+
+	@Override
+	public String getPaintSaveFileString() {
+		StringBuilder s = new StringBuilder();
+		s.append("Circle: ");
+		s.append("\tColor:" + getColor());
+		s.append("\tFilled: " + isFill());
+		s.append("\tCenter: ");
+		s.append("\tRadius: ");
+		s.append("EndCircle");
+
+		return s.toString();
+	}
 }

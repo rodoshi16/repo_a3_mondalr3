@@ -27,4 +27,16 @@ public class SquiggleCommand extends PaintCommand {
 		}
 		
 	}
+
+	@Override
+	public String getPaintSaveFileString() {
+		StringBuilder s = new StringBuilder();
+		s.append("Circle: ");
+		s.append("\tColor:" + getColor());
+		s.append("\tFilled: " + isFill());
+		s.append("\tCenter: ");
+		s.append("EndCircle");
+
+		return s.toString();
+	}
 }

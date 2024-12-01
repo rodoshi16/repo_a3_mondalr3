@@ -3,7 +3,7 @@ import java.util.Observable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public abstract class PaintCommand extends Observable {
+public abstract class PaintCommand extends Observable implements PaintSaveFileSavable {
 	private Color color;
 	private boolean fill;
 	
@@ -38,6 +38,12 @@ public abstract class PaintCommand extends Observable {
 		s+="\tfilled:"+this.fill+"\n";
 		return s;
 	}
+
+	@Override
+	public abstract String getPaintSaveFileString();
+
 	
 	public abstract void execute(GraphicsContext g);
+
+
 }

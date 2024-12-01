@@ -31,32 +31,32 @@ public class PaintFileParser {
 	private Pattern pCircleStart=Pattern.compile("^Circle$");
 	private Pattern pCircleEnd=Pattern.compile("^EndCircle$");
 
-	private Pattern pCircleColor= Pattern.compile("");
+	private Pattern pCircleColor= Pattern.compile("^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
 	private Pattern pCircleFilled = Pattern.compile("^(true|false)$");
 	private Pattern pCircleCenter= Pattern.compile("");
-	private Pattern pCircleRadius = Pattern.compile("");
+	private Pattern pCircleRadius = Pattern.compile("\\d");
 
 	private Pattern pRectangleStart=Pattern.compile("^Rectangle$");
 	private Pattern pRectangleEnd=Pattern.compile("^EndRectangle$");
 
-	private Pattern pRectangleColor=Pattern.compile("");
-	private Pattern pRectangleFilled=Pattern.compile("");
+	private Pattern pRectangleColor=Pattern.compile("^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
+	private Pattern pRectangleFilled=Pattern.compile("^(true|false)$");
 	private Pattern pRectanglePoint1=Pattern.compile("");
 	private Pattern pRectanglePoint2=Pattern.compile("");
 
 	private Pattern pSquiggleStart=Pattern.compile("^Squiggle$");
 	private Pattern pSquiggleEnd=Pattern.compile("^EndSquiggle$");
 
-	private Pattern pSquiggleColor=Pattern.compile("");
-	private Pattern pSquiggleFilled=Pattern.compile("");
+	private Pattern pSquiggleColor=Pattern.compile("^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
+	private Pattern pSquiggleFilled=Pattern.compile("^(true|false)$");
 	private Pattern pSquigglePoint=Pattern.compile("");
 	private Pattern pSquigglePoint1=Pattern.compile("");
 	private Pattern pSquigglePoint2=Pattern.compile("");
 
 
 	private Pattern pPolylineStart=Pattern.compile("^Polyline$");
-	private Pattern pPolylineColor=Pattern.compile("");
-	private Pattern pPolylineFilled=Pattern.compile("");
+	private Pattern pPolylineColor=Pattern.compile("^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
+	private Pattern pPolylineFilled=Pattern.compile("^(true|false)$");
 	private Pattern pPolylinePoint=Pattern.compile("");
 	private Pattern pPolylinePoint1=Pattern.compile("");
 	private Pattern pPolylinePoint2=Pattern.compile("");

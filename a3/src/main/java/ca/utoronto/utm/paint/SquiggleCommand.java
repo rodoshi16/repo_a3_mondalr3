@@ -31,11 +31,13 @@ public class SquiggleCommand extends PaintCommand {
 	@Override
 	public String getPaintSaveFileString() {
 		StringBuilder s = new StringBuilder();
-		s.append("Circle: ");
-		s.append("\tColor:" + getColor());
-		s.append("\tFilled: " + isFill());
-		s.append("\tCenter: ");
-		s.append("EndCircle");
+		s.append("Squiggle: ");
+		s.append("\tcolor:" + getColor());
+		s.append("\tfilled: " + isFill());
+		s.append("\tpoints: ");
+		s.append("\t\tp1: ");
+		s.append("\t\tp2: ");
+		s.append("EndSquiggle: ");
 
 		return s.toString();
 	}

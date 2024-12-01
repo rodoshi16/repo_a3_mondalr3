@@ -171,6 +171,7 @@ public class View implements EventHandler<ActionEvent> {
 	 * @param paintModel
 	 */
 	public static void save(PrintWriter writer, PaintModel paintModel) {
+
 		
 	}
 }
